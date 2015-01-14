@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phate", "Phate\Phate.csproj", "{3117361B-2593-467E-AE88-FB98147A3765}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libPhate", "libPhate\libPhate.vcxproj", "{DF3E1E96-3161-4431-AE86-242C119F6A3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|ARM.Build.0 = Debug|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Win32.ActiveCfg = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Win32.Build.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|Win32.Deploy.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|x86.ActiveCfg = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|x86.Build.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Debug|x86.Deploy.0 = Debug|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|ARM.ActiveCfg = Release|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|ARM.Build.0 = Release|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|ARM.Deploy.0 = Release|ARM
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Win32.ActiveCfg = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Win32.Build.0 = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|Win32.Deploy.0 = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|x86.ActiveCfg = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|x86.Build.0 = Release|x86
+		{3117361B-2593-467E-AE88-FB98147A3765}.Release|x86.Deploy.0 = Release|x86
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|ARM.Build.0 = Debug|ARM
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|Win32.Build.0 = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|x86.ActiveCfg = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Debug|x86.Build.0 = Debug|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|ARM.ActiveCfg = Release|ARM
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|ARM.Build.0 = Release|ARM
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|Win32.ActiveCfg = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|Win32.Build.0 = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|x86.ActiveCfg = Release|Win32
+		{DF3E1E96-3161-4431-AE86-242C119F6A3E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

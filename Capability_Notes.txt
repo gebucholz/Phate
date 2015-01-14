@@ -1,0 +1,852 @@
+WinPhone 8 Capabilities Notes:
+
+According to MSDN, "When you test your app on Windows Phone Emulator during the development process, if your app uses APIs associated with items such as location services or device ID, your app is automatically granted the corresponding capability." So, the baseline below includes at least networking.
+
+Each test below was done with the listed capabilities enabled, rebuilt on release mode, and deployed to the emulator.
+
+Future tests should be done on a device for a more accurate account.
+UPDATE: Testing on a real device (Nokia Lumia 822 with GDR3) shows the same behavior; group membership and privileges do not change.  So, 
+
+Results:
+
+So, looking at the results, no capability seems to affect our group enrollment or enabled privileges.  Additional research needs to be done on:
+
+1) What each capability grants access to (high-level overview and API set enabled)
+2) What additional capabilities are there (see the URL linked halfway down)
+3) How are these enforced at runtime?
+
+Data:
+
+BASELINE (No Capabilities Enabled*)
+* see above
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+ID_CAP_NETWORKING
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+ID_CAP_NETWORKING + ID_CAP_LOCATION
+(This is now the 'default', as these are the caps we require (afaik). Also, background execution was re-enabled at this point.)
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_APPOINTMENTS
+	
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_CONTACTS
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_GAMERSERVICES
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_IDENTITY_DEVICE
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_IDENTITY_USER
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_ISV_CAMERA
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_MAP
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_MEDIALIB_AUDIO
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_MEDIALIB_PHOTO
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_MEDIALIB_PLAYBACK
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_MICROPHONE
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_PHONEDIALER
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_PROXIMITY
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_PUSH_NOTIFICATION
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_REMOVABLE_STORAGE
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_SENSORS
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_WEBBROWSERCOMPONENT
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_SPEECH_RECOGNITION
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_VOIP
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_WALLET
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_WALLET_PAYMENTINSTRUMENTS
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+d+ID_CAP_WALLET_SECUREELEMENT
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+ALL MSDN_DEFINED CAPABILITIES
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+
+a+ID_CAP_CAMERA
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+a+ID_CAP_INTEROPSERVICES
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+a+ID_CAP_MEDIALIB_PHOTO_FULL
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+a+ID_CAP_NETWORKING_ADMIN
+
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+a+ID_CAP_PEOPLE_EXTENSION
+
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+
+ALL ENUMERATED CAPABILITIES - (ID_CAP_CALLMESSAGING_FILTER and ID_CAP_INPUT_FEATURES)
+
+	> whoami
+	Windows Phone\DefApps
+
+	Windows Phone\None( Mandatory Enabled default )
+	Everyone( Mandatory Enabled default )
+	Windows Phone\ServiceUserGroup( Mandatory Enabled default )
+	Windows Phone\DefAppsCapabilitiesGroup( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup1( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup3( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup417( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup5( Mandatory Enabled default )
+	Windows Phone\CapabilityGroup125( Mandatory Enabled default )
+	BUILTIN\Users( Mandatory Enabled default )
+	NT AUTHORITY\INTERACTIVE( Mandatory Enabled default )
+	CONSOLE LOGON( Mandatory Enabled default )
+	NT AUTHORITY\Authenticated Users( Mandatory Enabled default )
+	NT AUTHORITY\This Organization( Mandatory Enabled default )
+	LOCAL( Mandatory Enabled default )
+	NT AUTHORITY\NTLM Authentication( Mandatory Enabled default )
+	Mandatory Label\Low Mandatory Level( Integrity enabled )
+
+	SeChangeNotifyPrivilege
+	SeIncreaseWorkingSetPrivilege
+	

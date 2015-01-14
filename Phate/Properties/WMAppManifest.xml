@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US" />
+  <App xmlns="" ProductID="{3117361b-2593-467e-ae88-fb98147a3765}" Title="Phate" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Graham Bucholz and Jesse Hertz" Description="Phate: A tool to control your Windows Phone 8" Publisher="Matasano" PublisherID="{bbd87c01-40bf-4a98-bdb7-208e5e5847c9}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <!--<Capability Name="ID_CAP_WALLET_SECUREELEMENT" /> -->
+      <Capability Name="ID_CAP_APPOINTMENTS" />
+      <Capability Name="ID_CAP_CONTACTS" />
+      <Capability Name="ID_CAP_GAMERSERVICES" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_ISV_CAMERA" />
+      <Capability Name="ID_CAP_MAP" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_PROXIMITY" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+      <Capability Name="ID_CAP_REMOVABLE_STORAGE" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_VOIP" />
+      <Capability Name="ID_CAP_WALLET" />
+      <Capability Name="ID_CAP_WALLET_PAYMENTINSTRUMENTS" />
+      <!-- The below are the other enumeration values for capabilities: there is at least one missing, ID_CAP_BUILTIN_TCB -->
+      <!-- See: http://forum.xda-developers.com/showthread.php?t=2435697 -->
+      <!--<Capability Name= "ID_CAP_CAMERA"/>
+      <Capability Name= "ID_CAP_INTEROPSERVICES"/>
+      <Capability Name= "ID_CAP_MEDIALIB_PHOTO_FULL"/>
+      <Capability Name= "ID_CAP_NETWORKING_ADMIN"/>
+      <Capability Name= "ID_CAP_PEOPLE_EXTENSION"/>
+      <Capability Name= "ID_CAP_PEOPLE_EXTENSION_MOBILE"/>
+      <Capability Name= "ID_CAP_PERSONAL_INFORMATION_IMPORT"/>-->
+      <Capability Name="ID_CAP_RINGTONE_ADD" />
+      <!--<Capability Name= "ID_CAP_OEMPUBLICDIRECTORY"/>
+      <Capability Name= "ID_CAP_VOICEMAIL" />
+      <Capability Name= "ID_CAP_CELL_API_OEM_PASSTHROUGH" />
+      <Capability Name= "ID_CAP_CELL_API_COMMON" />
+      <Capability Name= "ID_CAP_CELL_API_UICC_LOWLEVEL" />
+      <Capability Name= "ID_CAP_CELL_API_LOCATION" />
+      <Capability Name= "ID_CAP_CELL_WNF" />
+      <Capability Name= "ID_CAP_DEVICE_MANAGEMENT_ADMIN" />
+      <Capability Name= "ID_CAP_DEVICE_MANAGEMENT" />
+      <Capability Name= "ID_CAP_CSP_MAIL" />
+      <Capability Name= "ID_CAP_CSP_W4_APPLICATION" />
+      <Capability Name= "ID_CAP_DEVICE_MANAGEMENT_SECURITY_POLICIES" />
+      <Capability Name= "ID_CAP_DU_MIGRATOR_STATUS_OEM" />
+      <Capability Name= "ID_CAP_MAP_WRITE" />
+      <Capability Name= "ID_CAP_DEVICE_MANAGEMENT_BOOTSTRAP" />
+      <Capability Name= "ID_CAP_SYNC_EXTENSION" />
+      <Capability Name= "ID_CAP_KIDZONE_CUSTOMIZATION" />
+      <Capability Name= "ID_CAP_OEM_ADC"/>
+      <Capability Name= "ID_CAP_CSP_OEM"/>
+      <Capability Name= "ID_CAP_PEOPLE_EXTENSION_IM" />
+      <Capability Name= "ID_CAP_CELL_API_UICC" />
+      <Capability Name= "ID_CAP_CSP_FOUNDATION" />
+      <Capability Name= "ID_CAP_OEM_DEPLOYMENT" />
+      <Capability Name= "ID_CAP_CSP_WIFI_HOTSPOT" />-->
+      <!--  <Capability Name= "ID_CAP_INTERNET_EXPLORER_FAVORITES" />
+      <Capability Name= "ID_CAP_CALLMESSAGING_FILTER"/> 
+      <Capability Name= "ID_CAP_SMS_INTERCEPT_AGENT"/>
+      <Capability Name= "ID_CAP_SMS_INTERCEPT_RECIPIENT"/>
+      <Capability Name= "ID_CAP_RUNTIME_CONFIG"/>
+      <Capability Name= "ID_CAP_INPUT_FEATURES"/>-->
+      <!--<Capability Name= "ID_CAP_WIFI_BASIC"/>
+      <Capability Name= "ID_CAP_INTERNET_EXPLORER_SEARCH_PROVIDER_KEYS_HKCU"/>-->
+      <!--<Capability Name="ID_CAP_BUILTIN_TCB" />-->
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml">
+        <BackgroundExecution>
+          <ExecutionType Name="LocationTracking" />
+        </BackgroundExecution>
+      </DefaultTask>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="NetREPLToken" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <Title>Phate</Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>
+          </HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>
