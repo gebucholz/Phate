@@ -1,6 +1,6 @@
 ﻿Phate
  
-A library and network server to explore Windows Phone 8
+A library and network server to explore Windows Phone 8. See http://chargen.matasano.com/chargen/2015/1/19/phate-investigations-into-windows-phone-8.html
 
 Incorporates lots of code from multiple sources, including:
  
