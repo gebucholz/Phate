@@ -15,7 +15,7 @@ Incorporates lots of code from multiple sources, including:
 	Information for implementing handle enumeration
 
 	MSDN (msdn.microsoft.com)
-	Becasue who doesn't copy directly from there?
+	Because who doesn't copy directly from there?
 
  Thanks!
 
